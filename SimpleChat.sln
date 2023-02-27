@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleChat", "SimpleChat\SimpleChat.csproj", "{2B9AF120-BD2E-48A6-B140-89F31632D182}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatLib", "ChatLib\ChatLib.csproj", "{C8F2A514-17C1-4456-B770-EC66E38AEC56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B9AF120-BD2E-48A6-B140-89F31632D182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B9AF120-BD2E-48A6-B140-89F31632D182}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B9AF120-BD2E-48A6-B140-89F31632D182}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B9AF120-BD2E-48A6-B140-89F31632D182}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8F2A514-17C1-4456-B770-EC66E38AEC56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8F2A514-17C1-4456-B770-EC66E38AEC56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8F2A514-17C1-4456-B770-EC66E38AEC56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8F2A514-17C1-4456-B770-EC66E38AEC56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8EE7FC9D-E5B5-4EF5-98C3-716B6A8EE894}
+	EndGlobalSection
+EndGlobal
