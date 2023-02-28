@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Dynamic;
 using System.Net.Sockets;
 
 namespace ChatLib
@@ -18,6 +17,8 @@ namespace ChatLib
                 const int port = 13000;
                 _client = new TcpClient("127.0.0.1", port);
 
+                Console.WriteLine("Client is connected to Server!");
+
                 // starting listening loop
                 Listening();
 
@@ -33,6 +34,7 @@ namespace ChatLib
             finally
             {
                 _client.Dispose();
+                Console.WriteLine("Disconnected.");
             }
         }
         
@@ -62,6 +64,7 @@ namespace ChatLib
         // Listening method
         private void Listening()
         {
+
             while (true)
             {
                 // Checking for incoming message
@@ -71,13 +74,25 @@ namespace ChatLib
                 if (!Console.KeyAvailable) {continue;}
                 
                 //User input mode: when user press "I" key.            
-                var userKey = Console.ReadKey();
+                var userKey = Console.ReadKey(true);
                 
                 if (userKey.Key == ConsoleKey.I)
                 {
+                    // Insertion mode prompt
                     Console.Write(">> ");
-                    // Make this sent to the respective sendMessage method
-                    SendMessage(Console.ReadLine());
+                    
+                    //Getting message
+                    string msg = Console.ReadLine();
+                    
+                    // Checking if user typed quit
+                    if (msg.Equals("quit"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        SendMessage(msg);
+                    }
                 }
                 else if (userKey.Key == ConsoleKey.Escape)
                 {

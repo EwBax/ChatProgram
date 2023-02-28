@@ -50,8 +50,17 @@ namespace ChatLib
         // Listening method
         private void Listening()
         {
+
             while (true)
             {
+
+                // Checking if the client has disconnected
+                if (!_client.Connected)
+                {
+                    Console.WriteLine("Application has been disconnected.");
+                    break;
+                }
+
                 // Checking for incoming message
                 GetMessage();
                 
@@ -59,13 +68,25 @@ namespace ChatLib
                 if (!Console.KeyAvailable) {continue;}
                 
                 //User input mode: when user press "I" key.            
-                var userKey = Console.ReadKey();
+                var userKey = Console.ReadKey(true);
                 
                 if (userKey.Key == ConsoleKey.I)
                 {
+                    // Insertion mode prompt
                     Console.Write(">> ");
-                    // Make this sent to the respective sendMessage method
-                    SendMessage(Console.ReadLine());
+                    
+                    //Getting message
+                    string msg = Console.ReadLine();
+                    
+                    // Checking if user typed quit
+                    if (msg.Equals("quit"))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        SendMessage(msg);
+                    }
                 }
                 else if (userKey.Key == ConsoleKey.Escape)
                 {
